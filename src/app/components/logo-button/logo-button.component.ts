@@ -1,24 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg',
-  templateUrl: './logo.svg',
-  styleUrls: ['./svg.component.css']
+  selector: 'app-logo-button',
+  templateUrl: './logo-button.component.html',
+  styleUrls: ['./logo-button.component.css']
 })
-export class SvgComponent implements OnInit {
+export class LogoButtonComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-    var x = document.getElementById("PATHS").querySelectorAll("path");  
-    for (let index = 0; index < x.length; index++) {
-      const element = x[index];
-
-      element.style.opacity = '0';
-      element.style.transition = 'all 1s ease';
-      
-    }
-
   }
 
   onAnimate() { 
