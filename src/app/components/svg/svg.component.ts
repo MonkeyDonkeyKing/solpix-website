@@ -7,45 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SvgComponent implements OnInit {
 
+
   constructor() { }
 
+
+
   ngOnInit(): void {
-    var x = document.getElementById("PATHS").querySelectorAll("path");  
-    for (let index = 0; index < x.length; index++) {
-      const element = x[index];
-
-      element.style.opacity = '0';
-      element.style.transition = 'all 1s ease';
-      
-    }
-
-  }
-
-  onAnimate() { 
-    var pathsToAnim = document.getElementById('PATHS');
-    pathsToAnim.animate([{
-      opacity: '0' },{
-        opacity: '1'}],
-        {
-          duration: 2000,
-          iterations: 1,
-          easing: 'ease'
-        });
     
   }
 
-  pathOpacity(){
-    var x = document.getElementById("PATHS").querySelectorAll("path");
-
-    for (let index = 0; index < x.length; index++) {
-      const element = x[index];
-      element.style.opacity = Math.random().toString();
-    }
-  }
-
-  onClickLogo(){
-    this.onAnimate();
-    this.pathOpacity();
-    setInterval(this.pathOpacity, 800); 
-  }
+  
 }

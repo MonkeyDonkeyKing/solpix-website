@@ -11,12 +11,35 @@ svg {
 
 #LOGO {
     opacity: 1;
-    cursor: pointer
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+#SOCIALS {
+    opacity: 1;
+    cursor: pointer;
     
 }
 
 #PATHS {
     opacity: 1;
-    transition: all 0.8s ease;
+}
+
+.st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #00CCFF;
+}
+
+.st1 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #FFD42A;
+}
+
+.st2 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #FFD42A;
 }
 
