@@ -1,1 +1,11 @@
-<button (click)="onClickLogo()"></button>
+<div class="container-burger">
+    <button [matMenuTriggerFor]="beforeMenu" class="burger-menu" (click)="onBurgerMenu()"></button>
+</div>
+<mat-menu #beforeMenu="matMenu" xPosition="before" class="test">
+    <button mat-menu-item class="testButton" (click)="clickMenuComingSoon()" >coming soon</button>
+    <button mat-menu-item class="testButton" (click)="clickMenuAbout()">about</button>
+    <button mat-menu-item class="testButton" (click)="clickMenuGen1()">GEN1</button>
+</mat-menu>
+<div class="container">
+    <button class="power" (click)="onClickLogo()"></button>
+</div>

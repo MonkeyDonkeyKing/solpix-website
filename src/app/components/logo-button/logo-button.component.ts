@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logo-button',
   templateUrl: './logo-button.component.html',
-  styleUrls: ['./logo-button.component.css']
+  styleUrls: ['./logo-button.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LogoButtonComponent implements OnInit {
 
   isClickedAlready: boolean = false;
   isCompleted: boolean = false;
 
-  constructor() { }
-
-
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     var x = document.getElementById("PATHS").querySelectorAll("path");  
@@ -21,44 +21,48 @@ export class LogoButtonComponent implements OnInit {
       element.style.opacity = '0';
       element.style.transition = 'all 1s ease';
     }
-
     var y = document.getElementById("SOCIALS").querySelectorAll("path");  
     for (let index = 0; index < y.length; index++) {
       const element = y[index];
       element.style.opacity = '0';
       element.style.transition = 'all 1s ease';
     }
-
     var z = document.getElementById("LOGO").querySelectorAll("path");  
     for (let index = 0; index < z.length; index++) {
       const element = z[index];
       element.style.opacity = '0';
-      element.style.transition = 'all 1s ease-in';
+      element.style.transition = 'all 2s ease-in';
     }
-
     var p = document.getElementById("POWER").querySelectorAll("path");  
     for (let index = 0; index < p.length; index++) {
       const element = p[index];
       element.style.color = '#ffd42a';
-      element.style.transition = 'all 1s ease';
+      element.style.transition = 'all 2s ease';
     }
+  }
 
+  clickMenuComingSoon() {
+    this.router.navigate(['/comingsoon']);
+  }
+  clickMenuAbout() {
+    this.router.navigate(['/about']);
+  }
+  clickMenuGen1() {
+    this.router.navigate(['/gen1']);
   }
 
   showSocials() {
     if (!this.isClickedAlready) {
       var x = document.getElementById("SOCIALS").querySelectorAll("path");
-
       for (let index = 0; index < x.length; index++) {
         const element = x[index];
         element.style.transition = 'all 1s ease';
         element.style.opacity = '1';
       }
-
       this.isClickedAlready = true;
       setTimeout( () => {
         this.showLogo();
-      },3000)
+      },1000)
 
     }
   }
@@ -111,13 +115,17 @@ export class LogoButtonComponent implements OnInit {
   }
 
   onClickLogo(){
-
     if(!this.isCompleted){
       this.onAnimatePaths();
       this.pathOpacity();
       this.showSocials();
       setInterval(this.pathOpacity, 900); 
     }
+  }
+
+
+  onBurgerMenu(){
 
   }
+
 }

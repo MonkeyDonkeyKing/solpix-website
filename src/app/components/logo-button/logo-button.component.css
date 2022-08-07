@@ -1,8 +1,49 @@
-button {
+.power {
     width: 100px;
-    height: 86px;
+    height: 104px;
     background: transparent;
     border: none !important;
     font-size:0;
-    cursor: pointer
+    cursor: pointer;
+
+}
+
+.burger-menu{
+    width: 34px;
+    height: 36px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 13%;
+    margin-left: -1%;
+}
+
+.container-burger {
+    margin-top: -53%;
+    margin-left: 88.7%;
+
+}
+
+
+.test {
+    min-width: 108px;
+    max-width: 10em;
+    border-radius: 20px;
+    margin-left: 85vw;
+    margin-top: -16%;
+
+}
+
+.testButton{
+    background-color: rgba(0, 0, 0, 0.626);
+    color: #ffd42a;
+    font-size: large;
+
+
 }
