@@ -1,43 +1,55 @@
 .power {
-    width: 100px;
-    height: 104px;
+    width: 156px;
+    height: 160px;
     background: transparent;
     border: none !important;
-    font-size:0;
+    font-size: 0;
     cursor: pointer;
 
 }
 
 .burger-menu{
-    width: 34px;
-    height: 36px;
+  position: absolute;
+    width: 63px;
+    height: 60px;
+    top: 100;
+    right: 180;
     background: transparent;
-    border: none !important;
-    font-size:0;
+    border: none;
+
+}
+
+@media only screen and (min-width: 1080px) {
+  .burger-menu {
+    font-size: 0;
     cursor: pointer;
+    width: 82px;
+    position: absolute;
+    height: 69px;
+    top: 190;
+    right: 240;
+    background: transparent;
+    border: none;
+  }
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    margin-top: 13%;
-    margin-left: -1%;
+    position: absolute;
+    left: 46.5%;
+    top: 45%;
+  }
+
+
+.mat-menu {
+  margin-left: 85vw;
+  margin-top: -50.7%;
+  background-color: #000;
+  border: 3px solid #0CF;
+  right: 50px;
 }
 
-.container-burger {
-    margin-top: -53%;
-    margin-left: 88.7%;
-
-}
-
-
-.test {
-    min-width: 108px;
-    max-width: 10em;
-    border-radius: 20px;
-    margin-left: 85vw;
-    margin-top: -16%;
-
+.mat-menu-panel-0{
+  max-width: 230px !important;
 }
 
 .testButton{

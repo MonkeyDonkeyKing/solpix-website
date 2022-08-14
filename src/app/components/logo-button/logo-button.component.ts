@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { delay, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-logo-button',
@@ -15,25 +16,26 @@ export class LogoButtonComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    var x = document.getElementById("PATHS").querySelectorAll("path");  
+    var x = document.getElementById("PATHS").querySelectorAll("path");
     for (let index = 0; index < x.length; index++) {
       const element = x[index];
       element.style.opacity = '0';
       element.style.transition = 'all 1s ease';
     }
-    var y = document.getElementById("SOCIALS").querySelectorAll("path");  
+    var y = document.getElementById("SOCIALS").querySelectorAll("path");
     for (let index = 0; index < y.length; index++) {
       const element = y[index];
       element.style.opacity = '0';
-      element.style.transition = 'all 1s ease';
+      element.style.transition = 'all 5s ease';
     }
-    var z = document.getElementById("LOGO").querySelectorAll("path");  
+    var z = document.getElementById("LOGO").querySelectorAll("path");
     for (let index = 0; index < z.length; index++) {
       const element = z[index];
       element.style.opacity = '0';
+      element.style.fill = '#00CCFF';
       element.style.transition = 'all 2s ease-in';
     }
-    var p = document.getElementById("POWER").querySelectorAll("path");  
+    var p = document.getElementById("POWER").querySelectorAll("path");
     for (let index = 0; index < p.length; index++) {
       const element = p[index];
       element.style.color = '#ffd42a';
@@ -56,57 +58,51 @@ export class LogoButtonComponent implements OnInit {
       var x = document.getElementById("SOCIALS").querySelectorAll("path");
       for (let index = 0; index < x.length; index++) {
         const element = x[index];
-        element.style.transition = 'all 1s ease';
         element.style.opacity = '1';
       }
       this.isClickedAlready = true;
-      setTimeout( () => {
-        this.showLogo();
-      },1000)
+
 
     }
   }
 
-  showLogo(){
+  showLogo() {
     var y = document.getElementById("POWER").querySelectorAll("path");
     for (let index = 0; index < y.length; index++) {
       const element = y[index];
       element.style.opacity = '0';
     }
     var x = document.getElementById("LOGO").querySelectorAll("path");
-      for (let index = 0; index < x.length; index++) {
-        const element = x[index];
-        element.style.opacity = '1';
-      }
+    for (let index = 0; index < x.length; index++) {
+      const element = x[index];
+      element.style.opacity = '1';
+    }
 
-    setTimeout( () => {
-      var z = document.getElementById("LOGO").querySelectorAll("path");
-      for (let index = 0; index < z.length; index++) {
-        const element = z[index];
-        element.style.fill = '#00CCFF';
-      }
-      this.isCompleted = true;
-    },2000)
   }
 
-  onAnimatePaths() { 
-    var pathsToAnim = document.getElementById('PATHS');
-    pathsToAnim.animate([{
-      opacity: '0' },{
-        opacity: '1'}],
-        {
-          duration: 3000,
-          iterations: 1,
-          easing: 'ease'
-        });
+  changeButtonToBlue() {
     var z = document.getElementById("POWER").querySelectorAll("path");
     for (let index = 0; index < z.length; index++) {
       const element = z[index];
       element.style.fill = '#00CCFF';
-    }     
+    }
   }
 
-  pathOpacity(){
+  onAnimatePaths() {
+    var pathsToAnim = document.getElementById('PATHS');
+    pathsToAnim.animate([{
+      opacity: '0'
+    }, {
+      opacity: '1'
+    }],
+      {
+        duration: 3000,
+        iterations: 1,
+        easing: 'ease'
+      });
+  }
+
+  pathOpacityAnimation() {
     var x = document.getElementById("PATHS").querySelectorAll("path");
     for (let index = 0; index < x.length; index++) {
       const element = x[index];
@@ -114,18 +110,40 @@ export class LogoButtonComponent implements OnInit {
     }
   }
 
-  onClickLogo(){
-    if(!this.isCompleted){
-      this.onAnimatePaths();
-      this.pathOpacity();
-      this.showSocials();
-      setInterval(this.pathOpacity, 900); 
+  onClickLogo() {
+    if (!this.isCompleted) {
+      this.isCompleted = true;
+
+      this.changeButtonToBlue();
+
+
+      setTimeout(() => {
+        this.onAnimatePaths();
+        this.pathOpacityAnimation();
+        setInterval(this.pathOpacityAnimation, 900);
+      }, 2000);
+
+      setTimeout(() => {
+        this.showSocials();
+      }, 3000);
+
+      setTimeout(() => {
+        this.showLogo();
+      }, 4000);
+
+
+
+      // setTimeout(() => {
+      //   this.showSocials();
+
+      //   setTimeout(() => {
+      //     this.showLogo();
+      //   }, 1000);
+
+      // }, 1000);
+
+
+
     }
   }
-
-
-  onBurgerMenu(){
-
-  }
-
 }

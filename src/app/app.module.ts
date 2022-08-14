@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { SvgComponent } from './components/svg/svg.component';
 import { LogoButtonComponent } from './components/logo-button/logo-button.component';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
@@ -39,13 +38,14 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES)
   ],
   declarations: [
-    AppComponent, 
-    HelloComponent, 
-    SvgComponent, 
-    LogoButtonComponent, 
-    ComingSoonComponent, AboutComponent, Gen1Component,
+    AppComponent,
+    SvgComponent,
+    LogoButtonComponent,
+    ComingSoonComponent,
+    AboutComponent,
+    Gen1Component
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,3 +2,34 @@
 body {
     background-color: black;
 }
+
+/* .center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  } */
+
+.text {
+    color: #ffd42a;
+}
+.popup{
+    position: absolute;
+    background-color: #000;
+    border: 3px solid #0CF;
+    width: 64%;
+    left: 16%;
+    top: 22%;
+    height: 51%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.logo-popup {
+    position: absolute;
+    left: 47.4%;
+    top: 44%;
+    opacity: 0.3;
+  }
+
