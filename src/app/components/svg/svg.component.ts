@@ -1,20 +1,167 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-svg',
-  templateUrl: './logo.svg',
+  templateUrl: './Version2.0.svg',
   styleUrls: ['./svg.component.css']
 })
 export class SvgComponent implements OnInit {
 
+  isClickedAlready: boolean = false;
+  isCompleted: boolean = false;
+  isOpen: boolean = false;
 
-  constructor() { }
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
+  someMethod() {
 
 
-
-  ngOnInit(): void {
-    
+    if (!this.isOpen) {
+      this.trigger.openMenu();
+      this.isOpen = true;
+    }
+    else {
+      this.trigger.closeMenu();
+      this.isOpen = false;
+    }
   }
 
-  
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    var x = document.getElementById("PATHS").querySelectorAll("path");
+    for (let index = 0; index < x.length; index++) {
+      const element = x[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+    var y = document.getElementById("SOCIALS").querySelectorAll("path");
+    for (let index = 0; index < y.length; index++) {
+      const element = y[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 5s ease';
+    }
+    var z = document.getElementById("LOGO").querySelectorAll("path");
+    for (let index = 0; index < z.length; index++) {
+      const element = z[index];
+      element.style.opacity = '0';
+      element.style.fill = '#00CCFF';
+      element.style.transition = 'all 2s ease-in';
+    }
+    var p = document.getElementById("POWER").querySelectorAll("path");
+    for (let index = 0; index < p.length; index++) {
+      const element = p[index];
+      element.style.color = '#f7b215';
+      element.style.transition = 'all 2s ease';
+    }
+
+    var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
+    for (let index = 0; index < pb.length; index++) {
+      const element = pb[index];
+      element.style.color = '#f7b215';
+      element.style.transition = 'all 2s ease';
+    }
+  }
+
+  clickMenuComingSoon() {
+    this.router.navigate(['/comingsoon']);
+    this.isOpen = false;
+
+  }
+  clickMenuAbout() {
+    this.router.navigate(['/about']);
+    this.isOpen = false;
+
+  }
+  clickMenuGen1() {
+    this.router.navigate(['/gen1']);
+    this.isOpen = false;
+
+  }
+
+  showSocials() {
+    if (!this.isClickedAlready) {
+      var x = document.getElementById("SOCIALS").querySelectorAll("path");
+      for (let index = 0; index < x.length; index++) {
+        const element = x[index];
+        element.style.opacity = '1';
+      }
+      this.isClickedAlready = true;
+    }
+  }
+
+  showLogo() {
+    var y = document.getElementById("POWER").querySelectorAll("path");
+    for (let index = 0; index < y.length; index++) {
+      const element = y[index];
+      element.style.opacity = '0';
+    }
+    var x = document.getElementById("LOGO").querySelectorAll("path");
+    for (let index = 0; index < x.length; index++) {
+      const element = x[index];
+      element.style.opacity = '1';
+    }
+
+  }
+
+  changeButtonToBlue() {
+    var z = document.getElementById("POWER").querySelectorAll("path");
+    for (let index = 0; index < z.length; index++) {
+      const element = z[index];
+      element.style.fill = '#00CCFF';
+    }
+
+    var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
+    for (let index = 0; index < pb.length; index++) {
+      const element = pb[index];
+      element.style.color = '#00CCFF';
+      element.style.opacity = '0';
+
+    }
+  }
+
+  onAnimatePaths() {
+    var pathsToAnim = document.getElementById('PATHS');
+    pathsToAnim.animate([{
+      opacity: '0'
+    }, {
+      opacity: '1'
+    }],
+      {
+        duration: 3000,
+        iterations: 1,
+        easing: 'ease'
+      });
+  }
+
+  pathOpacityAnimation() {
+    var x = document.getElementById("PATHS").querySelectorAll("path");
+    for (let index = 0; index < x.length; index++) {
+      const element = x[index];
+      element.style.opacity = Math.random().toString();
+    }
+  }
+
+  onClickLogo() {
+    if (!this.isCompleted) {
+      this.isCompleted = true;
+
+      this.changeButtonToBlue();
+
+
+      this.onAnimatePaths();
+      this.pathOpacityAnimation();
+      setInterval(this.pathOpacityAnimation, 900);
+
+      setTimeout(() => {
+        this.showSocials();
+      }, 5000);
+
+      setTimeout(() => {
+        this.showLogo();
+      }, 5000);
+    }
+  }
 }

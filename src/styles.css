@@ -1,6 +1,7 @@
 /* Add application styles & imports to this file! */
 body {
     background-color: black;
+    margin-top: -150px;
 }
 
 /* .center-screen {
@@ -12,24 +13,37 @@ body {
   } */
 
 .text {
-    color: #ffd42a;
+    color: #f7b215;
 }
 .popup{
     position: absolute;
     background-color: #000;
     border: 3px solid #0CF;
     width: 64%;
-    left: 16%;
     top: 22%;
     height: 51%;
     border-radius: 10px;
     padding: 20px;
+    outline: 15px solid #000;
 }
 
-.logo-popup {
+app-coming-soon {
+    display: flex;
+    justify-content: center;
+}
+app-about {
+    display: flex;
+    justify-content: center;
+}
+app-gen1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* .logo-popup {
     position: absolute;
     left: 47.4%;
     top: 44%;
     opacity: 0.3;
-  }
+  } */
 

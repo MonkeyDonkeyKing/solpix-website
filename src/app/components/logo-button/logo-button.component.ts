@@ -38,7 +38,14 @@ export class LogoButtonComponent implements OnInit {
     var p = document.getElementById("POWER").querySelectorAll("path");
     for (let index = 0; index < p.length; index++) {
       const element = p[index];
-      element.style.color = '#ffd42a';
+      element.style.color = '#f7b215';
+      element.style.transition = 'all 2s ease';
+    }
+
+    var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
+    for (let index = 0; index < pb.length; index++) {
+      const element = pb[index];
+      element.style.color = '#f7b215';
       element.style.transition = 'all 2s ease';
     }
   }
@@ -61,8 +68,6 @@ export class LogoButtonComponent implements OnInit {
         element.style.opacity = '1';
       }
       this.isClickedAlready = true;
-
-
     }
   }
 
@@ -117,19 +122,17 @@ export class LogoButtonComponent implements OnInit {
       this.changeButtonToBlue();
 
 
-      setTimeout(() => {
-        this.onAnimatePaths();
-        this.pathOpacityAnimation();
-        setInterval(this.pathOpacityAnimation, 900);
-      }, 2000);
+      this.onAnimatePaths();
+      this.pathOpacityAnimation();
+      setInterval(this.pathOpacityAnimation, 900);
 
       setTimeout(() => {
         this.showSocials();
-      }, 3000);
+      }, 5000);
 
       setTimeout(() => {
         this.showLogo();
-      }, 4000);
+      }, 5000);
 
 
 

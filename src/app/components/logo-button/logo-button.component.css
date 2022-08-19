@@ -1,14 +1,4 @@
-.power {
-    width: 156px;
-    height: 160px;
-    background: transparent;
-    border: none !important;
-    font-size: 0;
-    cursor: pointer;
-
-}
-
-.burger-menu{
+/* .burger-menu{
   position: absolute;
     width: 63px;
     height: 60px;
@@ -17,21 +7,7 @@
     background: transparent;
     border: none;
 
-}
-
-@media only screen and (min-width: 1080px) {
-  .burger-menu {
-    font-size: 0;
-    cursor: pointer;
-    width: 82px;
-    position: absolute;
-    height: 69px;
-    top: 190;
-    right: 240;
-    background: transparent;
-    border: none;
-  }
-}
+} */
 
 .container {
     position: absolute;
@@ -54,8 +30,6 @@
 
 .testButton{
     background-color: rgba(0, 0, 0, 0.626);
-    color: #ffd42a;
+    color: #f7b215;
     font-size: large;
-
-
 }
