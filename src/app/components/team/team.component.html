@@ -1,0 +1,47 @@
+<div class="popup" id="team">
+    <h1 class="text">Team</h1>
+
+    <mat-card class="team-card">
+        <img src="../../../assets/C_GANDALF.png" class="team-header-image" alt="Gandalf">
+        <mat-card-content class="mat-card-content">
+            <h3 class="text">Gandalfontheblockchain</h3>
+            <h6 class="text">Founder / Wizard</h6>
+            <p class="text">
+                I have a background in finance and psychology. Before jumping into the crypto space I run several
+                businesses. I was very fortunate to be able to use my expertise in the emerging crypto world from the
+                very beginning.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="button-content" mat-raised-button
+                onclick="location.href='https://twitter.com/gandalfisonit'">
+                <fa-icon [icon]="faTwitter"></fa-icon>
+            </button>
+            <button class="button-content" mat-raised-button [cdkCopyToClipboard]="gandalf"
+                matTooltip="copy to clipboard" aria-label="Button that displays a tooltip when focused or hovered over">
+                <mat-icon class="discord-icon">discord</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="team-card">
+        <img src="../../../assets/C_DEKAR.png" class="team-header-image" alt="Dekar">
+        <mat-card-content class="mat-card-content">
+            <h3 class="text">Dekar</h3>
+            <h6 class="text">Community / Headmoderation</h6>
+            <p class="text">
+                I am a trained photographer and studied mechanical engineering afterwards. To combine both jobs at its
+                best I am working currently in the light and vision department as an project coordinator.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="button-content" mat-raised-button onclick="location.href='https://twitter.com/Dekar_NFT'">
+                <fa-icon [icon]="faTwitter"></fa-icon>
+            </button>
+            <button class="button-content" mat-raised-button [cdkCopyToClipboard]="dekar" matTooltip="copy to clipboard"
+                aria-label="Button that displays a tooltip when focused or hovered over">
+                <mat-icon class="discord-icon">discord</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

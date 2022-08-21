@@ -9,27 +9,10 @@
 
 } */
 
-.container {
+/* .container {
     position: absolute;
     left: 46.5%;
     top: 45%;
-  }
+  } */
 
 
-.mat-menu {
-  margin-left: 85vw;
-  margin-top: -50.7%;
-  background-color: #000;
-  border: 3px solid #0CF;
-  right: 50px;
-}
-
-.mat-menu-panel-0{
-  max-width: 230px !important;
-}
-
-.testButton{
-    background-color: rgba(0, 0, 0, 0.626);
-    color: #f7b215;
-    font-size: large;
-}

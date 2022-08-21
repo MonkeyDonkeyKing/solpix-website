@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-svg',
   templateUrl: './Version2.0.svg',
-  styleUrls: ['./svg.component.css']
+  styleUrls: ['./svg.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class SvgComponent implements OnInit {
 
@@ -15,8 +16,7 @@ export class SvgComponent implements OnInit {
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  someMethod() {
-
+  openMenu() {
 
     if (!this.isOpen) {
       this.trigger.openMenu();
@@ -65,8 +65,8 @@ export class SvgComponent implements OnInit {
     }
   }
 
-  clickMenuComingSoon() {
-    this.router.navigate(['/comingsoon']);
+  clickTeam() {
+    this.router.navigate(['/team']);
     this.isOpen = false;
 
   }
@@ -75,10 +75,13 @@ export class SvgComponent implements OnInit {
     this.isOpen = false;
 
   }
-  clickMenuGen1() {
-    this.router.navigate(['/gen1']);
+  clickNFT() {
+    this.router.navigate(['/nft']);
     this.isOpen = false;
-
+  }
+  clickWhitePaper() {
+    this.router.navigate(['/whitepaper']);
+    this.isOpen = false;
   }
 
   showSocials() {
@@ -116,7 +119,6 @@ export class SvgComponent implements OnInit {
     var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
     for (let index = 0; index < pb.length; index++) {
       const element = pb[index];
-      element.style.color = '#00CCFF';
       element.style.opacity = '0';
 
     }

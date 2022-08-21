@@ -1,12 +1,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<div class="container-burger">
-		<button [matMenuTriggerFor]="beforeMenu" class="burger-menu"></button>
+	<div class="menu">
+		<div class="container-burger">
+			<button [matMenuTriggerFor]="beforeMenu" class="burger-menu"></button>
+		</div>
+		<mat-menu #beforeMenu="matMenu" class="mat-menu">
+			<button mat-menu-item class="testButton" (click)="clickMenuAbout()">about</button>
+			<button mat-menu-item class="testButton" (click)="clickTeam()">team</button>
+			<button mat-menu-item class="testButton" (click)="clickNFT()">NFT</button>
+			<button mat-menu-item class="testButton" (click)="clickWhitePaper()">Whitepaper</button>
+		</mat-menu>
 	</div>
-	<mat-menu #beforeMenu="matMenu" xPosition="before" class="mat-menu">
-		<button mat-menu-item class="testButton" (click)="clickMenuComingSoon()">coming soon</button>
-		<button mat-menu-item class="testButton" (click)="clickMenuAbout()">about</button>
-		<button mat-menu-item class="testButton" (click)="clickMenuGen1()">GEN1</button>
-	</mat-menu>
 	<svg version="1.1" id="svg927231"
 		xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2051.6 1371">
 		<title>SOLPIX</title>
@@ -8867,5 +8870,5 @@
 		<a href="https://twitter.com/solpixnft">
 			<rect id="OVERLAYTWITTER" x="1708.3" y="268.2" fill-rule="evenodd" clip-rule="evenodd" fill="#2AD4FF" fill-opacity="0" width="59.2" height="57.6"/>
 		</a>
-		<rect id="OVERLAYMENU" (click)="someMethod()" x="1803.2" y="268.2" fill-rule="evenodd" clip-rule="evenodd" fill="#2AD4FF" fill-opacity="0" width="59.2" height="57.6"/>
+		<rect id="OVERLAYMENU" (click)="openMenu()" x="1803.2" y="268.2" fill-rule="evenodd" clip-rule="evenodd" fill="#2AD4FF" fill-opacity="0" width="59.2" height="57.6"/>
 	</svg>

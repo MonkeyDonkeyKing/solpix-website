@@ -1,16 +1,3 @@
-/* Add application styles & imports to this file! */
-body {
-    background-color: black;
-    margin-top: -150px;
-}
-
-/* .center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-  } */
 
 .text {
     color: #f7b215;
@@ -21,13 +8,57 @@ body {
     border: 3px solid #0CF;
     width: 64%;
     top: 22%;
-    height: 51%;
     border-radius: 10px;
     padding: 20px;
     outline: 15px solid #000;
+    overflow: scroll;
+    max-height: 900px;
+    min-height: 385px;
+
+}
+#team {
+    display: flex;
 }
 
-app-coming-soon {
+.popup p {
+    font-size: 19px;
+}
+
+.mat-menu {
+    background-color: #000;
+    border: 3px solid #0CF;
+    margin-top: 170px;
+    min-width: 230px;
+  }
+
+.cdk-overlay-container {
+    position: inherit !important;
+    height: 0%;
+}
+
+.cdk-overlay-pane {
+    margin-right: 200px;
+    margin-top: 40px;
+}
+
+.cdk-overlay-connected-position-bounding-box{
+    align-items: flex-end !important;
+}
+  
+  
+.testButton{
+    background-color: rgba(0, 0, 0, 0.626);
+    color: #f7b215;
+    font-size: large;
+}
+  
+.testButton{
+    background-color: rgba(0, 0, 0, 0.626);
+    color: #f7b215;
+    font-size: large;
+}
+
+app-team {
     display: flex;
     justify-content: center;
 }
@@ -35,15 +66,20 @@ app-about {
     display: flex;
     justify-content: center;
 }
-app-gen1 {
+app-nft {
+    display: flex;
+    justify-content: center;
+}
+app-whitepaper {
     display: flex;
     justify-content: center;
 }
 
-/* .logo-popup {
-    position: absolute;
-    left: 47.4%;
-    top: 44%;
-    opacity: 0.3;
-  } */
 
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: black;
+    margin-top: -150px;
+}
