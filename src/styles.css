@@ -13,7 +13,7 @@
     outline: 15px solid #000;
     overflow: scroll;
     max-height: 900px;
-    min-height: 385px;
+    min-height: 900px;
 
 }
 #team {
@@ -82,4 +82,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-color: black;
     margin-top: -150px;
+}
+
+@media screen and (max-width: 1080px){
+    body {
+        margin-top: 0px;
+    }
 }

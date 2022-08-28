@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-svg',
-  templateUrl: './Version2.0.svg',
+  templateUrl: './Version2.1.svg',
   styleUrls: ['./svg.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
@@ -17,15 +17,7 @@ export class SvgComponent implements OnInit {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   openMenu() {
-
-    if (!this.isOpen) {
-      this.trigger.openMenu();
-      this.isOpen = true;
-    }
-    else {
-      this.trigger.closeMenu();
-      this.isOpen = false;
-    }
+    this.router.navigate(['/whitepaper'])
   }
 
   constructor(private router: Router) { }
@@ -41,8 +33,15 @@ export class SvgComponent implements OnInit {
     for (let index = 0; index < y.length; index++) {
       const element = y[index];
       element.style.opacity = '0';
-      element.style.transition = 'all 5s ease';
+      element.style.transition = 'all 1s ease';
     }
+    var y1 = document.getElementById("SOCIALS").querySelectorAll("text");
+    for (let index = 0; index < y1.length; index++) {
+      const element = y1[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+
     var z = document.getElementById("LOGO").querySelectorAll("path");
     for (let index = 0; index < z.length; index++) {
       const element = z[index];
@@ -89,6 +88,12 @@ export class SvgComponent implements OnInit {
       var x = document.getElementById("SOCIALS").querySelectorAll("path");
       for (let index = 0; index < x.length; index++) {
         const element = x[index];
+        element.style.opacity = '1';
+      }
+      var y1 = document.getElementById("SOCIALS").querySelectorAll("text");
+      for (let index = 0; index < y1.length; index++) {
+        const element = y1[index];
+        element.style.transition = 'all 1s ease';
         element.style.opacity = '1';
       }
       this.isClickedAlready = true;
