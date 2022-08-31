@@ -13,6 +13,7 @@ export class SvgComponent implements OnInit {
   isClickedAlready: boolean = false;
   isCompleted: boolean = false;
   isOpen: boolean = false;
+  isOpen2: boolean = false;
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
