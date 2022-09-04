@@ -31,10 +31,10 @@ svg {
     fill: #f7b215;
 }
 
-#POWERBORDER {
+#POWERBORDERNEW {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    fill: #f7b215;
+    stroke: #f7b215;
     background: transparent;
     border: none !important;
     font-size: 0;

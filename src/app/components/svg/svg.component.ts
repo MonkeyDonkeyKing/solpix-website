@@ -16,8 +16,8 @@ export class SvgComponent implements OnInit {
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  openMenu() {
-    this.router.navigate(['/whitepaper'])
+  openMenu(url: string) {
+    window.open(url, "_blank");
   }
 
   constructor(private router: Router) { }
@@ -56,7 +56,7 @@ export class SvgComponent implements OnInit {
       element.style.transition = 'all 2s ease';
     }
 
-    var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
+    var pb = document.getElementById("POWERBORDERNEW").querySelectorAll("path");
     for (let index = 0; index < pb.length; index++) {
       const element = pb[index];
       element.style.color = '#f7b215';
@@ -121,7 +121,7 @@ export class SvgComponent implements OnInit {
       element.style.fill = '#00CCFF';
     }
 
-    var pb = document.getElementById("POWERBORDER").querySelectorAll("path");
+    var pb = document.getElementById("POWERBORDERNEW").querySelectorAll("path");
     for (let index = 0; index < pb.length; index++) {
       const element = pb[index];
       element.style.opacity = '0';
@@ -164,11 +164,11 @@ export class SvgComponent implements OnInit {
 
       setTimeout(() => {
         this.showSocials();
+        this.showLogo();
+
       }, 5000);
 
-      setTimeout(() => {
-        this.showLogo();
-      }, 5000);
+
     }
   }
 }
