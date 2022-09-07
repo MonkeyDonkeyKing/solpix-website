@@ -23,6 +23,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBook, faCheck, faCoffee, faCommentAlt, faEllipsisH, faEnvelope, faExclamation, faInfo, faLightbulb, faLink, faMinus, faPrint, fas } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faLinkedinIn, faGooglePlusG, faPinterestP, faRedditAlien, faTumblr, faWhatsapp, faVk, faFacebookMessenger, faTelegramPlane, faMix, faXing, faLine } from '@fortawesome/free-brands-svg-icons';
 import { SolpixComponent } from './components/solpix/solpix.component';
+import { BubbleComponent } from './components/bubble/bubble.component';
 
 
 
@@ -73,14 +74,15 @@ const icons = [
     FontAwesomeModule,
   ],
   declarations: [
-    AppComponent,
-    SvgComponent,
-    LogoButtonComponent,
-    TeamComponent,
     AboutComponent,
+    AppComponent,
+    BubbleComponent,
+    LogoButtonComponent,
     NFTComponent,
+    TeamComponent,
+    SolpixComponent,
+    SvgComponent,
     WhitePaperComponent,
-    SolpixComponent
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]

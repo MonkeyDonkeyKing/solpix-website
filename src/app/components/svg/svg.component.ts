@@ -13,6 +13,7 @@ export class SvgComponent implements OnInit {
   isClickedAlready: boolean = false;
   isCompleted: boolean = false;
   isOpen: boolean = false;
+  bubble: boolean = false;
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
@@ -42,7 +43,7 @@ export class SvgComponent implements OnInit {
       element.style.transition = 'all 1s ease';
     }
 
-    var z = document.getElementById("LOGO").querySelectorAll("path");
+    var z = document.getElementById("LOGONEW").querySelectorAll("path");
     for (let index = 0; index < z.length; index++) {
       const element = z[index];
       element.style.opacity = '0';
@@ -62,6 +63,49 @@ export class SvgComponent implements OnInit {
       element.style.color = '#f7b215';
       element.style.transition = 'all 2s ease';
     }
+
+    var bubble1 = document.getElementById("Layer_1-2").querySelectorAll("path");
+    for (let index = 0; index < bubble1.length; index++) {
+      const element = bubble1[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+    var bubble2 = document.getElementById("Layer_1-2").querySelectorAll("circle");
+    for (let index = 0; index < bubble2.length; index++) {
+      const element = bubble2[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+    var bubble3 = document.getElementById("Layer_1-2").querySelectorAll("polyline");
+    for (let index = 0; index < bubble3.length; index++) {
+      const element = bubble3[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+
+    setTimeout(() => {
+      if (!this.isCompleted) {
+        this.bubble = true;
+
+        var bubble1 = document.getElementById("Layer_1-2").querySelectorAll("path");
+        for (let index = 0; index < bubble1.length; index++) {
+          const element = bubble1[index];
+          element.style.opacity = '1';
+        }
+        var bubble2 = document.getElementById("Layer_1-2").querySelectorAll("circle");
+        for (let index = 0; index < bubble2.length; index++) {
+          const element = bubble2[index];
+          element.style.opacity = '1';
+        }
+        var bubble3 = document.getElementById("Layer_1-2").querySelectorAll("polyline");
+        for (let index = 0; index < bubble3.length; index++) {
+          const element = bubble3[index];
+          element.style.opacity = '1';
+        }
+      }
+    }, 5000)
+
+
   }
 
   clickTeam() {
@@ -106,7 +150,7 @@ export class SvgComponent implements OnInit {
       const element = y[index];
       element.style.opacity = '0';
     }
-    var x = document.getElementById("LOGO").querySelectorAll("path");
+    var x = document.getElementById("LOGONEW").querySelectorAll("path");
     for (let index = 0; index < x.length; index++) {
       const element = x[index];
       element.style.opacity = '1';
@@ -126,6 +170,24 @@ export class SvgComponent implements OnInit {
       const element = pb[index];
       element.style.opacity = '0';
 
+    }
+    var bubble1 = document.getElementById("Layer_1-2").querySelectorAll("path");
+    for (let index = 0; index < bubble1.length; index++) {
+      const element = bubble1[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+    var bubble2 = document.getElementById("Layer_1-2").querySelectorAll("circle");
+    for (let index = 0; index < bubble2.length; index++) {
+      const element = bubble2[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
+    }
+    var bubble3 = document.getElementById("Layer_1-2").querySelectorAll("polyline");
+    for (let index = 0; index < bubble3.length; index++) {
+      const element = bubble3[index];
+      element.style.opacity = '0';
+      element.style.transition = 'all 1s ease';
     }
   }
 
@@ -154,6 +216,7 @@ export class SvgComponent implements OnInit {
   onClickLogo() {
     if (!this.isCompleted) {
       this.isCompleted = true;
+      this.bubble = false;
 
       this.changeButtonToBlue();
 
@@ -166,7 +229,7 @@ export class SvgComponent implements OnInit {
         this.showSocials();
         this.showLogo();
 
-      }, 5000);
+      }, 2000);
 
 
     }

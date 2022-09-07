@@ -75,6 +75,24 @@ app-whitepaper {
     justify-content: center;
 }
 
+.logo-popup{
+    position: absolute;
+    scale: 0.5;
+    bottom: calc(100vh/2);
+    left: calc(100vw/2);
+    
+}
+
+.idle{
+    stroke: #f7b215;
+    stroke-width: 3;
+}
+
+img {
+    transition: 1s all ease;
+    opacity: 1;
+}
+
 
 html, body { height: 100%; }
 body { 
